@@ -6,7 +6,9 @@ function App() {
 
   return (
     <>
-      <Header></Header>
+      <div className='bg-[black] text-[white]'>
+        <Header></Header>
+      </div>
       <Outlet></Outlet>
     </>
   )

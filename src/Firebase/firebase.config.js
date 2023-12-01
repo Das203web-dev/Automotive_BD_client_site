@@ -4,13 +4,14 @@ import { initializeApp } from "firebase/app";
 // https://firebase.google.com/docs/web/setup#available-libraries
 
 // Your web app's Firebase configuration
+console.log(import.meta.env.VITE_APIKEY)
 const firebaseConfig = {
-    apiKey: "AIzaSyAHmxVxAIVOz7DL6yh64s0qm1Tf4KhyZfA",
-    authDomain: "automotivebdclientsite.firebaseapp.com",
-    projectId: "automotivebdclientsite",
-    storageBucket: "automotivebdclientsite.appspot.com",
-    messagingSenderId: "456306905341",
-    appId: "1:456306905341:web:5769c93c0d0bc7d8306e94"
+    apiKey: import.meta.env.VITE_APIKEY,
+    authDomain: import.meta.env.VITE_AUTHDOMAIN,
+    projectId: import.meta.env.VITE_PROJECTID,
+    storageBucket: import.meta.env.VITE_STORAGEBUCKET,
+    messagingSenderId: import.meta.env.VITE_MESSAGINGSENDERID,
+    appId: import.meta.env.VITE_APPID
 };
 
 // Initialize Firebase
