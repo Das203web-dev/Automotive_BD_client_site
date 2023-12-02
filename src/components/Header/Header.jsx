@@ -103,7 +103,7 @@ const Header = () => {
                 </div> */}
             <div className="navbar-end w-full mr-1">
                 {
-                    user ? <div><img src={user.photoUrl} alt="" /></div> : <div></div>
+                    user && <div><img src={user.photoUrl} alt="" /></div>
                 }
                 <div>
                     {

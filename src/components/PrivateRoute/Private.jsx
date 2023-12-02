@@ -1,11 +1,21 @@
-import React from 'react';
-import { Navigate } from 'react-router-dom';
+import React, { useContext } from 'react';
+import { Navigate, useLocation } from 'react-router-dom';
+import { ContextProvider } from '../Provider/Provider';
 
 const Private = ({ children }) => {
-    if (children) {
-        children
+    const { user, loading } = useContext(ContextProvider);
+    const location = useLocation();
+    if (loading) {
+        return (
+            <div className='flex justify-center items-center'>
+                <span className="loading loading-bars loading-lg"></span>
+            </div>
+        )
     }
-    return <Navigate to={'/login'}></Navigate>
+    if (user) {
+        return children;
+    }
+    return <Navigate state={location.pathname} to={'/login'}></Navigate>
 };
 
 export default Private;
