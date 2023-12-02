@@ -75,6 +75,21 @@ const Header = () => {
         >
             My Cart
         </NavLink>
+        <NavLink
+            to={`/brand`}
+            className={({ isActive, isPending }) =>
+                isActive
+                    ? "active"
+                    : isPending
+                        ? "pending"
+                        : ""
+            }
+            style={({ isActive }) => ({
+                color: isActive ? "Red" : ""
+            })}
+        >
+            Brand
+        </NavLink>
 
     </>
     return (

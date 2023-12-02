@@ -15,6 +15,7 @@ import Private from './components/PrivateRoute/Private';
 import Register from './components/Register/Register';
 import Provider from './components/Provider/Provider';
 import ErrorPage from './Pages/ErrorPage/ErrorPage';
+import Brand from './Pages/Brand/Brand';
 const router = createBrowserRouter([
   {
     path: "/",
@@ -24,7 +25,7 @@ const router = createBrowserRouter([
       {
         path: '/',
         element: <Home></Home>,
-        loader: () => fetch("http://localhost:5000/addProduct")
+        loader: () => fetch("http://localhost:5000/brandPage")
       },
       {
         path: '/addProduct',
@@ -43,10 +44,19 @@ const router = createBrowserRouter([
         element: <Register></Register>
       },
       {
-        path: '/brandPage',
+        path: "/brand",
+        element: <Brand></Brand>
+      },
+      // {
+      //   path: '/brandPage',
+      //   element: <BrandPage></BrandPage>,
+      //   loader: () => fetch(`http://localhost:5000/brandPage`)
+      // },
+      {
+        path: '/brandPage/:brand',
         element: <BrandPage></BrandPage>,
-        // loader: () => fetch("http://localhost:5000/brandPage")
-      }
+        loader: ({ params }) => fetch(`http://localhost:5000/addProduct/${params.brand}`)
+      },
     ]
   },
 ]);
