@@ -42,7 +42,7 @@ const BrandPage = () => {
                     filterAdvertise.map(ad => <AddSlider key={ad._id} sliderAdd={ad}></AddSlider>)
                 }
             </div>
-            <div>
+            <div className='grid grid-cols-2 gap-5 lg:mx-20 my-24  mx-5'>
                 {
                     filterdCars.map(car => <CarCard key={car._id} car={car}></CarCard>)
                 }
