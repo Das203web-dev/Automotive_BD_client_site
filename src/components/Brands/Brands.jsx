@@ -4,7 +4,7 @@ import Card from '../Card/Card';
 const Brands = () => {
     const [brands, setBrands] = useState([])
     useEffect(() => {
-        fetch("https://automotivebdclientsite.web.app/brandPage")
+        fetch("http://localhost:5000/brandPage")
             .then(res => res.json())
             .then(data => setBrands(data))
     }, [])

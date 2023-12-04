@@ -17,6 +17,7 @@ import Provider from './components/Provider/Provider';
 import ErrorPage from './Pages/ErrorPage/ErrorPage';
 import Brand from './Pages/Brand/Brand';
 import CarDetails from './components/CarDetails/CarDetails';
+import Update from './components/Update/Update';
 const router = createBrowserRouter([
   {
     path: "/",
@@ -26,7 +27,7 @@ const router = createBrowserRouter([
       {
         path: '/',
         element: <Home></Home>,
-        loader: () => fetch("https://automotivebdclientsite.web.app/brandPage")
+        loader: () => fetch("http://localhost:5000/brandPage")
       },
       {
         path: '/addProduct',
@@ -35,12 +36,12 @@ const router = createBrowserRouter([
       {
         path: '/myCart',
         element: <Private><MyCart></MyCart></Private>,
-        loader: () => fetch(`https://automotivebdclientsite.web.app/myCart`)
+        // loader: () => fetch(`http://localhost:5000/myCart`)
       },
       // {
       //   path: '/myCart/:_id',
-      //   element: <Private><MyCart></MyCart></Private>,
-      //   loader: ({ params }) => fetch(`https://automotivebdclientsite.web.app/myCart/${params._id}`)
+      //   element: <MyCart></MyCart>,
+      //   loader: ({ params }) => fetch(`http://localhost:5000/myCart/${params._id}`)
       // },
       {
         path: '/login',
@@ -61,7 +62,12 @@ const router = createBrowserRouter([
       {
         path: "/carDetails/:id",
         element: <Private><CarDetails></CarDetails></Private>,
-        loader: ({ params }) => fetch(`https://automotivebdclientsite.web.app/carDetails/${params.id}`)
+        loader: ({ params }) => fetch(`http://localhost:5000/carDetails/${params.id}`)
+      },
+      {
+        path: "/update/:id",
+        element: <Update></Update>,
+        loader: ({ params }) => fetch(`http://localhost:5000/brandPage/${params.id}`)
       }
 
     ]

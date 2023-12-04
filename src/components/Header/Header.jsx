@@ -3,6 +3,8 @@ import { FaCar } from "react-icons/fa6";
 import { useContext } from "react";
 import { ContextProvider } from "../Provider/Provider";
 import Swal from "sweetalert2";
+import { CgProfile } from "react-icons/cg";
+
 
 
 const Header = () => {
@@ -99,7 +101,9 @@ const Header = () => {
                 </div> */}
             <div className="navbar-end w-full mr-1">
                 {
-                    user && <div><img className="w-10 h-10 rounded-full" src={user.photoURL} alt="" /></div>
+                    user?.photoURL ? <div><img className="w-10 h-10 rounded-full" src={user.photoURL} alt="" /></div> : (
+                        <div className="w-10 h-10 rounded-full"><CgProfile className="md:text-4xl text-3xl"></CgProfile></div>
+                    )
                 }
                 <div>
                     {

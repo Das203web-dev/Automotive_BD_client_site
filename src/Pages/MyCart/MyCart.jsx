@@ -1,9 +1,18 @@
-import { useLoaderData } from "react-router-dom";
+import { useLoaderData, useParams } from "react-router-dom";
 import CartBody from "./CartBody/CartBody";
 import Swal from "sweetalert2";
+import { useEffect, useState } from "react";
 
 const MyCart = () => {
-    const cartInfo = useLoaderData();
+    // const cartInfo = useLoaderData();
+    const [cartInfo, setCartInfo] = useState([])
+    useEffect(() => {
+        fetch("http://localhost:5000/myCart")
+            .then(res => res.json())
+            .then(data => setCartInfo(data))
+    }, [])
+    const { _id } = useParams();
+    console.log(_id)
     const handleDelete = (id) => {
         console.log('get id', id)
         Swal.fire({
@@ -16,11 +25,12 @@ const MyCart = () => {
             confirmButtonText: "Yes, delete it!"
         }).then((result) => {
             if (result.isConfirmed) {
-                fetch(`https://automotivebdclientsite.web.app/myCart/${id}`, {
+                fetch(`http://localhost:5000/myCart/${id}`, {
                     method: 'DELETE'
                 })
                     .then(res => res.json())
                     .then(data => {
+                        console.log(data)
                         if (data.deletedCount > 0) {
                             Swal.fire({
                                 title: "Deleted!",
