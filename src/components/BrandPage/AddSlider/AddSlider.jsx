@@ -8,7 +8,7 @@ import 'swiper/css/navigation';
 
 const AddSlider = ({ sliderAdd }) => {
     const { advertisement1, advertisement2, advertisement3 } = sliderAdd;
-    console.log(advertisement1, advertisement2, advertisement3)
+    // console.log(advertisement1, advertisement2, advertisement3)
     return (
         <div>
             <Swiper

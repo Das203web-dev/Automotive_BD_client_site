@@ -7,28 +7,9 @@ import Swal from "sweetalert2";
 
 const Header = () => {
     const { user, logOut } = useContext(ContextProvider);
-    const location = useLocation();
-    const navigate = useNavigate()
-    // const userLogOut = () => {
-    //     logOut()
-    //     .then(() => {
-    //         Swal.fire({
-    //             title: 'Logout Success!',
-    //             text: 'Do you want to continue',
-    //             icon: 'success',
-    //             confirmButtonText: 'OK'
-    //         })
-    //         // navigate(location?.state ? location.state : "/")
-    //     })
-    //     .catch(error => {
-    //         Swal.fire({
-    //             title: 'Logout Success!',
-    //             text: `${error.message}`,
-    //             icon: 'success',
-    //             confirmButtonText: 'OK'
-    //         })
-    //     })
-    // }
+    // console.log(user)
+
+
     const links = <>
         <NavLink
             to={`/`}
@@ -118,7 +99,7 @@ const Header = () => {
                 </div> */}
             <div className="navbar-end w-full mr-1">
                 {
-                    user && <div><img src={user.photoUrl} alt="" /></div>
+                    user && <div><img className="w-10 h-10 rounded-full" src={user.photoURL} alt="" /></div>
                 }
                 <div>
                     {

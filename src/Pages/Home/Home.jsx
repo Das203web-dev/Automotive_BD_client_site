@@ -1,8 +1,6 @@
 import { useLoaderData } from "react-router-dom";
 import Banner from "../../components/Header/Banner/Banner";
 import Card from "../../components/Card/Card";
-import Brand from "../Brand/Brand";
-import Brands from "../../components/Brands/Brands";
 
 const Home = () => {
     const carBrands = useLoaderData();
@@ -13,7 +11,8 @@ const Home = () => {
         <div>
             <Banner></Banner>
             {/* <Brands></Brands> */}
-            <div className="grid lg:grid-cols-3 grid-cols-2 gap-5 lg:mx-20 my-24  mx-5">
+            <h1 className="text-3xl  my-24 text-center font-bold">Our Brands</h1>
+            <div className="grid md:grid-cols-3 grid-cols-1 gap-5 lg:mx-20  mx-5">
                 {
                     carBrands.map(car => <Card key={car._id} car={car}></Card>)
                 }

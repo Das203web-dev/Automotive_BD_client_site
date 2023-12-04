@@ -22,7 +22,8 @@ const Brand = () => {
             })
     }
     return (
-        <div>
+        <div className="mt-10">
+            <h1 className="text-3xl font-bold text-center mb-5">Add New Brands Here</h1>
             <form onSubmit={handleBrandForm} className='grid grid-cols-2 w-1/2 mx-auto gap-5'>
                 <input className='px-2 py-1 border-2 ' type="text" name='brand' placeholder='Brand_Name' />
                 <input className='px-2 py-1 border-2 ' type="text" name='image' placeholder='Brand_Image' />
