@@ -8,7 +8,7 @@ const CarDetails = () => {
     const [cartProduct, setCartProduct] = useState([]);
     // console.log(detailOfCar)
     useEffect(() => {
-        fetch("http://localhost:5000/myCart")
+        fetch("https://automotivebdclientsite.web.app/myCart")
             .then(res => res.json())
             .then(data => setCartProduct(data))
     }, [])
@@ -25,7 +25,7 @@ const CarDetails = () => {
             })
         }
         else {
-            fetch(`http://localhost:5000/myCart`, {
+            fetch(`https://automotivebdclientsite.web.app/myCart`, {
                 method: "POST",
                 headers: {
                     "content-type": "application/json"

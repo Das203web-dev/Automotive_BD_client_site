@@ -1,3 +1,5 @@
+import Swal from "sweetalert2";
+
 const Brand = () => {
     const handleBrandForm = (e) => {
         e.preventDefault();
@@ -8,7 +10,7 @@ const Brand = () => {
         const advertisement2 = form.adTwo.value;
         const advertisement3 = form.adThree.value;
         const brandInfo = { brandName, brandImage, advertisement1, advertisement2, advertisement3 }
-        fetch("http://localhost:5000/brandPage", {
+        fetch("https://automotivebdclientsite.web.app/brandPage", {
             method: "post",
             headers: {
                 "content-type": "application/json"
@@ -17,7 +19,14 @@ const Brand = () => {
         })
             .then(res => res.json())
             .then(data => {
-                console.log(data)
+                if (data) {
+                    Swal.fire({
+                        title: 'Login Success!',
+                        text: "Continue",
+                        icon: 'success',
+                        confirmButtonText: 'OK'
+                    })
+                }
                 form.reset()
             })
     }

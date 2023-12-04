@@ -26,7 +26,7 @@ const router = createBrowserRouter([
       {
         path: '/',
         element: <Home></Home>,
-        loader: () => fetch("http://localhost:5000/brandPage")
+        loader: () => fetch("https://automotivebdclientsite.web.app/brandPage")
       },
       {
         path: '/addProduct',
@@ -35,12 +35,12 @@ const router = createBrowserRouter([
       {
         path: '/myCart',
         element: <Private><MyCart></MyCart></Private>,
-        loader: () => fetch(`http://localhost:5000/myCart`)
+        loader: () => fetch(`https://automotivebdclientsite.web.app/myCart`)
       },
       // {
       //   path: '/myCart/:_id',
       //   element: <Private><MyCart></MyCart></Private>,
-      //   loader: ({ params }) => fetch(`http://localhost:5000/myCart/${params._id}`)
+      //   loader: ({ params }) => fetch(`https://automotivebdclientsite.web.app/myCart/${params._id}`)
       // },
       {
         path: '/login',
@@ -61,7 +61,7 @@ const router = createBrowserRouter([
       {
         path: "/carDetails/:id",
         element: <Private><CarDetails></CarDetails></Private>,
-        loader: ({ params }) => fetch(`http://localhost:5000/carDetails/${params.id}`)
+        loader: ({ params }) => fetch(`https://automotivebdclientsite.web.app/carDetails/${params.id}`)
       }
 
     ]

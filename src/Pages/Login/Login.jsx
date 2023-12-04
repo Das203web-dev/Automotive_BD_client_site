@@ -29,7 +29,7 @@ const Login = () => {
             .catch(error => {
                 if (error) {
                     Swal.fire({
-                        title: 'Registration Failed!',
+                        title: 'Login Failed!',
                         text: `${error.message}`,
                         icon: 'error',
                         confirmButtonText: 'OK'
@@ -37,30 +37,7 @@ const Login = () => {
                 }
             })
     }
-    // const handleLoginByGoogle = () => {
-    //     googleSignUp()
-    //         .then(result => {
-    //             if (result.user) {
-    //                 Swal.fire({
-    //                     title: 'Login Success!',
-    //                     text: "Continue",
-    //                     icon: 'success',
-    //                     confirmButtonText: 'OK'
-    //                 })
-    //             }
-    //             navigate(location?.state ? location.state : "/")
-    //         })
-    //         .catch(error => {
-    //             if (error) {
-    //                 Swal.fire({
-    //                     title: 'Registration Failed!',
-    //                     text: `${error.message}`,
-    //                     icon: 'error',
-    //                     confirmButtonText: 'OK'
-    //                 })
-    //             }
-    //         })
-    // }
+
     return (
         <div>
             <div className="hero min-h-screen bg-base-200">
@@ -90,18 +67,7 @@ const Login = () => {
                                 <button className="bg-[red] py-3 text-white rounded-lg">Login</button>
                             </div>
                             <p>Dont Have Account ? Please <Link to={'/register'}>Register</Link></p>
-                            {/* <div className='flex mt-5 justify-center items-center gap-5 text-xl font-extrabold'>
-                                <div className='p-2 rounded-full shadow-2xl shadow-black border-2 hover:text-[red]  hover:shadow-[red]'>
-                                    <Link>
-                                        <FaFacebook></FaFacebook>
-                                    </Link>
-                                </div>
-                                <div className='p-2 rounded-full shadow-2xl shadow-black border-2 hover:text-[red]  hover:shadow-[red]'>
-                                    <Link>
-                                        <FaGoogle onClick={handleLoginByGoogle}></FaGoogle>
-                                    </Link>
-                                </div>
-                            </div> */}
+
                         </form>
                     </div>
                 </div>
