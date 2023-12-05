@@ -53,7 +53,7 @@ const Home = () => {
                             <label htmlFor="message">Your Message</label>
                             <textarea id="message" name="message" rows="4" required></textarea>
                         </div>
-                        <button className="w-full " type="submit">Send</button>
+                        <button className="w-full border-2 px-4 py-2 text-black font-semibold text-xl" >Send</button>
                     </form>
                 </div>
             </section>

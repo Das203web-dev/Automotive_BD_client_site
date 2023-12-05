@@ -4,7 +4,7 @@ import Swal from 'sweetalert2';
 
 const CarDetails = () => {
     const detailOfCar = useLoaderData();
-    console.log(detailOfCar)
+    // console.log(detailOfCar)
     const [cartProduct, setCartProduct] = useState([]);
     // console.log(detailOfCar)
     useEffect(() => {

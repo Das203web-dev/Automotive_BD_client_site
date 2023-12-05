@@ -41,9 +41,9 @@ textarea:focus {
 
 button {
     padding: 10px 20px;
-    border: none;
+    /* border: none; */
     border-radius: 4px;
-    background: linear-gradient(to left, rgba(255, 255, 255, 0.382), red);
+    background: linear-gradient(to left, rgba(255, 255, 255, 0.377), rgb(255, 0, 0));
     color: white;
     cursor: pointer;
     transition: all 0.3s ease;
