@@ -10,7 +10,7 @@ const Brand = () => {
         const advertisement2 = form.adTwo.value;
         const advertisement3 = form.adThree.value;
         const brandInfo = { brandName, brandImage, advertisement1, advertisement2, advertisement3 }
-        fetch("http://localhost:5000/brandPage", {
+        fetch("https://automitivebd.onrender.com/brandPage", {
             method: "post",
             headers: {
                 "content-type": "application/json"
@@ -33,7 +33,7 @@ const Brand = () => {
     return (
         <div className="mt-10">
             <h1 className="text-3xl font-bold text-center mb-5">Add New Brands Here</h1>
-            <form onSubmit={handleBrandForm} className='grid grid-cols-2 w-1/2 mx-auto gap-5'>
+            <form onSubmit={handleBrandForm} className='grid md:grid-cols-2 grid-cols-1 md:w-1/2 w-full mx-auto gap-5'>
                 <input className='px-2 py-1 border-2 ' type="text" name='brand' placeholder='Brand_Name' />
                 <input className='px-2 py-1 border-2 ' type="text" name='image' placeholder='Brand_Image' />
                 <input className='px-2 py-1 border-2 ' type="text" name="adOne" placeholder="Advertisement-1" />

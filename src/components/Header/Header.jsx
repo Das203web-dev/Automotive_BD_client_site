@@ -99,12 +99,14 @@ const Header = () => {
                         user ? user.photoUrl : ""
                     }
                 </div> */}
-            <div className="navbar-end w-full mr-1">
-                {
-                    user?.photoURL ? <div><img className="w-10 h-10 rounded-full" src={user.photoURL} alt="" /></div> : (
-                        <div className="w-10 h-10 rounded-full"><CgProfile className="md:text-4xl text-3xl"></CgProfile></div>
-                    )
-                }
+            <div className="navbar-end w-full mr-1 gap-1">
+                <div className="flex justify-center items-center">
+                    {
+                        user?.photoURL ? <div><img className="md:w-10  md:h-10 w-[30px] h-[30px] rounded-full" src={user.photoURL} alt="" /></div> : (
+                            <div className="w-10  relative h-10  rounded-full"><CgProfile className="md:text-4xl absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 text-3xl"></CgProfile></div>
+                        )
+                    }
+                </div>
                 <div>
                     {
                         user ? <Link to={'/'}><button onClick={logOut} className="px-4 py-2 rounded font-bold bg-[red] text-xl">Logout</button></Link > : <Link to={'/login'} ><button className="px-4 py-2 rounded font-bold bg-[red] text-xl">Login</button></Link>

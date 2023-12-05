@@ -1,4 +1,4 @@
-import React, { useContext } from 'react';
+import React, { useContext, useState } from 'react';
 import { FaFacebook, FaGoogle } from 'react-icons/fa6';
 import { Link, useLocation, useNavigate } from 'react-router-dom';
 import { ContextProvider } from '../Provider/Provider';
@@ -10,9 +10,9 @@ import Swal from 'sweetalert2';
 
 const Register = () => {
     // const provider = new GoogleAuthProvider()
-
+    const [registrationError, setRegistrationError] = useState("")
     const { googleSignUp, userCreationWithEmailPassword } = useContext(ContextProvider);
-    console.log(userCreationWithEmailPassword)
+
     const location = useLocation();
     const navigate = useNavigate();
     const createUser = (e) => {
@@ -20,6 +20,16 @@ const Register = () => {
         const form = e.target;
         const email = form.email.value;
         const password = form.password.value;
+        setRegistrationError("")
+        if (password.length < 6) {
+            return setRegistrationError("Password is less than 6 characters")
+        }
+        else if (/^[^A-Z]*$/.test(password)) {
+            return setRegistrationError("Don't have a capital letter")
+        }
+        else if (/^[A-Za-z0-9]*$/.test(password)) {
+            return setRegistrationError("Don't have a special character")
+        }
         console.log(email, password)
         userCreationWithEmailPassword(email, password)
             .then(result => {
@@ -34,6 +44,7 @@ const Register = () => {
                 }
             })
             .catch(error => {
+                setRegistrationError(error.message)
                 Swal.fire({
                     title: 'Registration Failed!',
                     text: `${error.message}`,
@@ -88,6 +99,9 @@ const Register = () => {
                                 <a href="#" className="label-text-alt link link-hover">Forgot password?</a>
                             </label>
                         </div>
+                        {
+                            registrationError && <h1 className='text-[red]'>{registrationError}</h1>
+                        }
                         <div className="form-control mt-6">
                             <input className="bg-[red] py-3 text-white rounded-lg" type="submit" value="Register" />
                         </div>

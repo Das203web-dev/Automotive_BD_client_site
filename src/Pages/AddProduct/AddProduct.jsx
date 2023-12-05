@@ -12,7 +12,7 @@ const AddProduct = () => {
         const description = form.carDescription.value;
         const rating = form.rating.value;
         const carDetail = { name, image, brand, carType, price, description, rating }
-        fetch("http://localhost:5000/addProduct", {
+        fetch("https://automitivebd.onrender.com/addProduct", {
             method: "POST",
             headers: {
                 "content-type": "application/json"
@@ -39,19 +39,19 @@ const AddProduct = () => {
             <form onSubmit={handleAddProduct} className='grid grid-cols-1 md:grid-cols-2 gap-5 md:w-1/2 mx-auto w-full'>
                 <div className='flex flex-col w-full'>
                     <label htmlFor="image">Car Image</label>
-                    <input className='border-2 px-2 py-1 w-full' type="text" name="image" id="image" placeholder='Image' />
+                    <input className='border-2 px-2 py-1 w-full' type="text" name="image" id="image" placeholder='Image' required />
                 </div>
                 <div className='flex flex-col'>
                     <label htmlFor="name">Car Name</label>
-                    <input className='border-2 px-2 py-1' type="text" name="name" id="name" placeholder='Car Name' />
+                    <input className='border-2 px-2 py-1' type="text" name="name" id="name" placeholder='Car Name' required />
                 </div>
                 <div className='flex flex-col'>
                     <label htmlFor="brandName">Brand Name</label>
-                    <input className='border-2 px-2 py-1' type="text" name="brand" id="brandName" placeholder='Brand Name' />
+                    <input className='border-2 px-2 py-1' type="text" name="brand" id="brandName" placeholder='Brand Name' required />
                 </div>
                 <div className='flex flex-col'>
                     <label htmlFor="carType">Car Type</label>
-                    <select className="py-1 px-2 border-2" name="carType" id="carType">
+                    <select className="py-2 px-2 border-2" name="carType" id="carType">
                         <option value="used">Used</option>
                         <option value="new">New</option>
                     </select>
@@ -59,17 +59,17 @@ const AddProduct = () => {
                 </div>
                 <div className='flex flex-col'>
                     <label htmlFor="price">Price</label>
-                    <input className='border-2 px-2 py-1' type="text" name="price" id="price" placeholder='$ Price' />
+                    <input className='border-2 px-2 py-1' type="text" name="price" id="price" placeholder='$ Price' required />
                 </div>
                 <div className='flex flex-col'>
                     <label htmlFor="description">Description</label>
-                    <input className='border-2 px-2 py-1' type="text" name="carDescription" id="description" placeholder='Description' />
+                    <input className='border-2 px-2 py-1' type="text" name="carDescription" id="description" placeholder='Description' required />
                 </div>
                 <div className='flex flex-col'>
                     <label htmlFor="rating">Rating</label>
-                    <input className='border-2 px-2 py-1' type="text" name="rating" id="description" placeholder='Rating' />
+                    <input className='border-2 px-2 py-1' type="text" name="rating" id="description" placeholder='Rating' required />
                 </div>
-                <input className='border-2 md:col-span-2 bg-black text-white text-lg px-2 py-1' type="submit" value="Submit" />
+                <input className='border-2 md:col-span-2 bg-black text-white text-lg rounded px-[20px] py-[10px]' type="submit" value="Submit" />
             </form>
         </div>
     );

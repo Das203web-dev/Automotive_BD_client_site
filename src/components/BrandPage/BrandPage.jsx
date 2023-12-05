@@ -16,7 +16,7 @@ const BrandPage = () => {
     useEffect(() => {
         const fetchData = async () => {
             try {
-                const carsData = await fetch(`http://localhost:5000/addProduct`);
+                const carsData = await fetch(`https://automitivebd.onrender.com/addProduct`);
                 const carsResponse = await carsData.json();
                 setCars(carsResponse);
             } catch (error) {
@@ -28,7 +28,7 @@ const BrandPage = () => {
         fetchData();
     }, [brand]);
     useEffect(() => {
-        fetch("http://localhost:5000/brandPage")
+        fetch("https://automitivebd.onrender.com/brandPage")
             .then(res => res.json())
             .then(data => setAdvertise(data))
     }, [brand])

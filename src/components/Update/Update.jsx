@@ -17,7 +17,7 @@ const Update = () => {
         const description = form.carDescription.value;
         const rating = form.rating.value;
         const carDetail = { name, image, brand, carType, price, description, rating }
-        fetch(`http://localhost:5000/addProduct/${_id}`, {
+        fetch(`https://automitivebd.onrender.com/addProduct/${_id}`, {
             method: "PUT",
             headers: {
                 "content-type": "application/json"
@@ -56,7 +56,7 @@ const Update = () => {
                 </div>
                 <div className='flex flex-col'>
                     <label htmlFor="carType">Car Type</label>
-                    <select className="py-1 px-2 border-2" defaultChecked={carType} name="carType" id="carType">
+                    <select className="py-2 px-2 border-2" defaultChecked={carType} name="carType" id="carType">
                         <option value="used">Used</option>
                         <option value="new">New</option>
                     </select>
@@ -74,7 +74,7 @@ const Update = () => {
                     <label htmlFor="rating">Rating</label>
                     <input className='border-2 px-2 py-1' type="text" name="rating" id="description" placeholder='Rating' defaultValue={rating} />
                 </div>
-                <input className='border-2 md:col-span-2 bg-black text-white text-lg px-2 py-1' type="submit" value="Update" />
+                <input className='border-2 md:col-span-2 bg-black text-white text-lg py-2 rounded' type="submit" value="Update" />
             </form>
         </div>
     );

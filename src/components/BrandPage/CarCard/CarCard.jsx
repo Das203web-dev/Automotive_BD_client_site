@@ -5,11 +5,11 @@ const CarCard = ({ car }) => {
     // console.log(car)
     const { _id, image, name, brand, carType, price, rating } = car
     return (
-        <div className='shadow-2xl'>
+        <div className='shadow-2xl h-full rounded'>
 
             <img className='w-full h-56' src={image} alt="" />
             <div className='p-5'>
-                <div className='space-y-2 my-5 text-center'>
+                <div className='space-y-2  grid-flow-col my-5 text-center'>
                     <h1 className='text-3xl font-semibold'>{name}</h1>
                     <h2 className='text-2xl'>Brand : <span className=' font-extrabold'>{brand}</span> </h2>
                     <p className='text-xl'>Type : <span className='uppercase'>{carType}</span></p>
