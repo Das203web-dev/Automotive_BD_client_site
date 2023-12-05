@@ -8,7 +8,7 @@ const CarDetails = () => {
     const [cartProduct, setCartProduct] = useState([]);
     // console.log(detailOfCar)
     useEffect(() => {
-        fetch("https://automitivebd.onrender.com/myCart")
+        fetch("http://localhost:5000/myCart")
             .then(res => res.json())
             .then(data => setCartProduct(data))
     }, [])
@@ -25,7 +25,7 @@ const CarDetails = () => {
             })
         }
         else {
-            fetch(`https://automitivebd.onrender.com/myCart`, {
+            fetch(`http://localhost:5000/myCart`, {
                 method: "POST",
                 headers: {
                     "content-type": "application/json"

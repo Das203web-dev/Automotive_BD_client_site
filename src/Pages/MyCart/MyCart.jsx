@@ -1,18 +1,15 @@
-import { useLoaderData, useParams } from "react-router-dom";
 import CartBody from "./CartBody/CartBody";
 import Swal from "sweetalert2";
 import { useEffect, useState } from "react";
 
 const MyCart = () => {
-    // const cartInfo = useLoaderData();
-    const [cartInfo, setCartInfo] = useState([])
+    const [cartInfo, setCartInfo] = useState([]);
+    console.log(cartInfo)
     useEffect(() => {
-        fetch("https://automitivebd.onrender.com/myCart")
+        fetch("http://localhost:5000/myCart")
             .then(res => res.json())
             .then(data => setCartInfo(data))
     }, [])
-    const { _id } = useParams();
-    console.log(_id)
     const handleDelete = (id) => {
         console.log('get id', id)
         Swal.fire({
@@ -25,18 +22,17 @@ const MyCart = () => {
             confirmButtonText: "Yes, delete it!"
         }).then((result) => {
             if (result.isConfirmed) {
-                fetch(`https://automitivebd.onrender.com/myCart/${id}`, {
+                fetch(`http://localhost:5000/myCart/${id}`, {
                     method: 'DELETE'
                 })
                     .then(res => res.json())
                     .then(data => {
                         console.log(data)
                         if (data.deletedCount > 0) {
-                            Swal.fire({
-                                title: "Deleted!",
-                                text: "Your file has been deleted.",
-                                icon: "success"
-                            });
+
+                            const remaining = cartInfo.filter(product => product._id !== id);
+                            console.log(remaining)
+                            setCartInfo(remaining)
                         }
                         else {
                             Swal.fire({

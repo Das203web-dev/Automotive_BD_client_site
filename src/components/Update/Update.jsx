@@ -17,7 +17,7 @@ const Update = () => {
         const description = form.carDescription.value;
         const rating = form.rating.value;
         const carDetail = { name, image, brand, carType, price, description, rating }
-        fetch(`https://automitivebd.onrender.com/addProduct/${_id}`, {
+        fetch(`http://localhost:5000/addProduct/${_id}`, {
             method: "PUT",
             headers: {
                 "content-type": "application/json"

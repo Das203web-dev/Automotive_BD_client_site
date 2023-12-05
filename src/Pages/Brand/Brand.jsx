@@ -10,7 +10,7 @@ const Brand = () => {
         const advertisement2 = form.adTwo.value;
         const advertisement3 = form.adThree.value;
         const brandInfo = { brandName, brandImage, advertisement1, advertisement2, advertisement3 }
-        fetch("https://automitivebd.onrender.com/brandPage", {
+        fetch("http://localhost:5000/brandPage", {
             method: "post",
             headers: {
                 "content-type": "application/json"

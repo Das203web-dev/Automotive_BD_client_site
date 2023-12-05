@@ -27,7 +27,7 @@ const router = createBrowserRouter([
       {
         path: '/',
         element: <Home></Home>,
-        loader: () => fetch("https://automitivebd.onrender.com/brandPage")
+        loader: () => fetch("http://localhost:5000/brandPage")
       },
       {
         path: '/addProduct',
@@ -56,12 +56,12 @@ const router = createBrowserRouter([
       {
         path: "/carDetails/:id",
         element: <Private><CarDetails></CarDetails></Private>,
-        loader: ({ params }) => fetch(`https://automitivebd.onrender.com/carDetails/${params.id}`)
+        loader: ({ params }) => fetch(`http://localhost:5000/carDetails/${params.id}`)
       },
       {
         path: "/update/:id",
         element: <Private><Update></Update></Private>,
-        loader: ({ params }) => fetch(`https://automitivebd.onrender.com/brandPage/${params.id}`)
+        loader: ({ params }) => fetch(`http://localhost:5000/brandPage/${params.id}`)
       }
 
     ]
