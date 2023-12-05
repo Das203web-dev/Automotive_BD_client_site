@@ -12,7 +12,7 @@ const AddProduct = () => {
         const description = form.carDescription.value;
         const rating = form.rating.value;
         const carDetail = { name, image, brand, carType, price, description, rating }
-        fetch("http://localhost:5000/addProduct", {
+        fetch("https://automitivebd.onrender.com/addProduct", {
             method: "POST",
             headers: {
                 "content-type": "application/json"

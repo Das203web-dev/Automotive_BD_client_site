@@ -6,7 +6,7 @@ const MyCart = () => {
     const [cartInfo, setCartInfo] = useState([]);
     console.log(cartInfo)
     useEffect(() => {
-        fetch("http://localhost:5000/myCart")
+        fetch("https://automitivebd.onrender.com/myCart")
             .then(res => res.json())
             .then(data => setCartInfo(data))
     }, [])
@@ -22,7 +22,7 @@ const MyCart = () => {
             confirmButtonText: "Yes, delete it!"
         }).then((result) => {
             if (result.isConfirmed) {
-                fetch(`http://localhost:5000/myCart/${id}`, {
+                fetch(`https://automitivebd.onrender.com/myCart/${id}`, {
                     method: 'DELETE'
                 })
                     .then(res => res.json())

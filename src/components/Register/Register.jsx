@@ -105,7 +105,7 @@ const Register = () => {
                         <div className="form-control mt-6">
                             <input className="bg-[red] py-3 text-white rounded-lg" type="submit" value="Register" />
                         </div>
-                        <p>Already Have An Account ? Please <Link to={'/login'}>Login</Link></p>
+                        <p>Already Have An Account ? Please <Link className='text-blue-700 font-bold' to={'/login'}>Login</Link></p>
                         <div className='flex mt-5 justify-center items-center gap-5 text-xl font-extrabold'>
                             <div className='p-2 rounded-full shadow-2xl shadow-black border-2 hover:text-[red]  hover:shadow-[red]'>
                                 <Link>

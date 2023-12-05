@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 const Card = ({ car }) => {
     // const [maindata, setMaindata] = useState([])
     // useEffect(() => {
-    //     fetch("http://localhost:5000/addProduct")
+    //     fetch("https://automitivebd.onrender.com/addProduct")
     //         .then(res => res.json())
     //         .then(data => setMaindata(data))
     // }, [])
